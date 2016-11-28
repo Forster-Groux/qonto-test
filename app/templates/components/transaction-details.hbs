@@ -1,0 +1,50 @@
+<div id='details'>
+  {{#if transaction}}
+    <div class='row'>
+      <div class='col-md-6'>
+        Created at:
+      </div>
+      <div class='col-md-6'>
+        {{transaction.created_at}}
+      </div>
+      <div class='col-md-6'>
+        Counterparty:
+      </div>
+      <div class='col-md-6'>
+        {{transaction.counterparty_name}}
+      </div>
+      <div class='col-md-6'>
+        Debit:
+      </div>
+      <div class='col-md-6'>
+        {{transaction.debit}}
+      </div>
+      <div class='col-md-6'>
+        Credit:
+      </div>
+      <div class='col-md-6'>
+        {{transaction.credit}}
+      </div>
+      <div class='col-md-6'>
+        Amount:
+      </div>
+      <div class='col-md-6'>
+        {{transaction.amount}}
+      </div>
+      <div class='col-md-6'>
+        Currency:
+      </div>
+      <div class='col-md-6'>
+        {{transaction.currency}}
+      </div>
+      <div class='col-md-6'>
+        Operation type:
+      </div>
+      <div class='col-md-6'>
+        {{transaction.operation_type}}
+      </div>
+    </div>
+  {{else}}
+    Click on one transaction to see details.
+  {{/if}}
+</div>

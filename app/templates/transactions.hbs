@@ -1,0 +1,46 @@
+<div class='row'>
+  <div id='title' class='col-md-2 no-padding'>
+    Finpal
+  </div>
+  <div class='col-md-7 no-padding'>
+    <div class='header'></div>
+    <div class='transactions'>
+      <div class='row'>
+        <div class='col-md-3'>
+          Created at
+        </div>
+        <div class='col-md-3'>
+          Counterparty
+        </div>
+        <div class='col-md-3'>
+          Operation
+        </div>
+        <div class='col-md-3'>
+          Amount
+        </div>
+      </div>
+      <hr>
+      {{#each model as |transaction|}}
+        <div class='row select-transaction' {{action 'select_transaction' transaction}}>
+          <div class='col-md-3'>
+            {{transaction.created_at}}
+          </div>
+          <div class='col-md-3'>
+            {{transaction.counterparty_name}}
+          </div>
+          <div class='col-md-3'>
+            {{transaction.operation_type}}
+          </div>
+          <div class='col-md-3'>
+            {{transaction.amount}}
+          </div>
+        </div>
+        <hr>
+      {{/each}}
+    </div>
+  </div>
+  <div class='col-md-3 no-padding'>
+    <div class='rightheader'></div>
+    {{transaction-details transaction=selectedTransaction}}
+  </div>
+</div>
