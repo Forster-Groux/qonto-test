@@ -6,24 +6,28 @@
     <div class='header'></div>
     <div class='transactions'>
       <div class='row'>
-        <div class='col-md-3'>
+        <div class='col-md-3' {{action 'sort_transactions' 'created_at'}}>
           Created at
+          <span class={{if (eq currentOrder 'created_at') 'glyphicon glyphicon-chevron-down pointer' 'glyphicon glyphicon-chevron-up pointer'}}></span>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-3' {{action 'sort_transactions' 'counterparty_name'}}>
           Counterparty
+          <span class={{if (eq currentOrder 'counterparty_name') 'glyphicon glyphicon-chevron-down pointer' 'glyphicon glyphicon-chevron-up pointer'}}></span>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-3' {{action 'sort_transactions' 'operation_type'}}>
           Operation
+          <span class={{if (eq currentOrder 'operation_type') 'glyphicon glyphicon-chevron-down pointer' 'glyphicon glyphicon-chevron-up pointer'}}></span>
         </div>
-        <div class='col-md-3'>
+        <div class='col-md-3' {{action 'sort_transactions' 'amount'}}>
           Amount
+          <span class={{if (eq currentOrder 'amount') 'glyphicon glyphicon-chevron-down pointer' 'glyphicon glyphicon-chevron-up pointer'}}></span>
         </div>
       </div>
       <hr>
       {{#each model as |transaction|}}
         <div class='row select-transaction' {{action 'select_transaction' transaction}}>
           <div class='col-md-3'>
-            {{transaction.created_at}}
+            {{transaction.formatedDate}}
           </div>
           <div class='col-md-3'>
             {{transaction.counterparty_name}}
@@ -32,7 +36,7 @@
             {{transaction.operation_type}}
           </div>
           <div class='col-md-3'>
-            {{transaction.amount}}
+            {{transaction.amount}} {{transaction.currency}}
           </div>
         </div>
         <hr>

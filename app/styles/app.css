@@ -21,6 +21,7 @@
 .transactions {
   text-align: center;
   padding: 3em;
+  background-color: Beige;
 }
 
 .select-transaction:hover {
@@ -29,9 +30,17 @@
 }
 
 #details {
-  text-align: center;
+  padding: 2em;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .no-padding {
   padding: 0;
+}
+
+.pointer {
+  cursor: pointer;
 }
